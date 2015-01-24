@@ -1,5 +1,5 @@
 ##Saloon stylists, clients organizer
-Stores and lists saloons and directs you to the stylist page with stylist's client
+Stores and lists stylists and clients and directs you to the stylist page with stylist's clients
 Ruby version 2.2
 
 ##Project Setup

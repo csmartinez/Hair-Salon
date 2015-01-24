@@ -3,18 +3,18 @@
 <form action="/stylists" method="post">
   <input id="stylist_id" name="stylist_id" type="hidden" value="<%= @stylist.id() %>">
 
-  <label for="client">Client</label>
-  <input id="client" name="client" type="text">
+  <label for="clientsname">Client</label>
+  <input id="clientsname" name="clientsname" type="text">
 
   <button type="submit">Add Client</button>
 </form>
 
-<% if @stylist.clients().any?() %>
+<% if @stylist.clientsname().any?() %>
 <h3>Here are all of this stylist's clients:</h3>
 
 <ul>
-  <% @stylist.clients().each() do |myclient| %>
-  <li><%= myclient.client() %></li>
+  <% @stylist.clientsname().each() do |myclient| %>
+  <li><%= myclient.clientsname() %></li>
   <% end %>
 </ul>
 <% else %>

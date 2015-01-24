@@ -1,8 +1,8 @@
 class Client
-  attr_reader(:client, :stylist_id)
+  attr_reader(:clientsname, :stylist_id)
 
   define_method(:initialize) do |attributes|
-    @client = attributes.fetch(:client)
+    @clientsname = attributes.fetch(:clientsname)
     @stylist_id = attributes.fetch(:stylist_id)
   end
 
@@ -18,7 +18,7 @@ class Client
   end
 
   define_method(:save) do
-    DB.exec("INSERT INTO clients (clientsname, stylist_id) VALUES ('#{@client}', #{@stylist_id})")
+    DB.exec("INSERT INTO clients (clientsname, stylist_id) VALUES ('#{@clientsname}', #{@stylist_id})")
   end
 
   define_method(:==) do |another_client|

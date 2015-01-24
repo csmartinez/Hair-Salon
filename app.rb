@@ -34,7 +34,7 @@ get("/stylist/:id") do
   erb(:stylist)
 end
 
-#PLEASE READ: This error was given to me, I was unable to see this website in action.
+#PLEASE READ: This error was given to me, I was unable to see this page in action or debug any sinatra issues.
 # /Users/carlimartinez/.gem/ruby/2.2.0/gems/pg-0.18.1/lib/pg.rb:45:in `initialize': FATAL:  the database system is shutting down (PG::ConnectionBad)
 # 	from /Users/carlimartinez/.gem/ruby/2.2.0/gems/pg-0.18.1/lib/pg.rb:45:in `new'
 # 	from /Users/carlimartinez/.gem/ruby/2.2.0/gems/pg-0.18.1/lib/pg.rb:45:in `connect'

@@ -12,7 +12,7 @@ carlimartinez=# CREATE DATABASE hairsalon;
 
 carlimartinez=# \c hairsalon;
 
-hair_saloon=# CREATE TABLE clients (id serial PRIMARY KEY, clientsname varchar, stylist_id);
+hair_saloon=# CREATE TABLE clients (id serial PRIMARY KEY, clientsname varchar, stylist_id integer);
 
 hair_saloon=# CREATE TABLE stylists (id serial PRIMARY KEY, name varchar);
 

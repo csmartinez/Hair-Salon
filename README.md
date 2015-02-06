@@ -8,17 +8,15 @@ Ruby version 2.2
 psql (9.4.0)
 Type "help" for help.
 
-carlimartinez=# CREATE DATABASE hairsaloon;
+carlimartinez=# CREATE DATABASE hairsalon;
 
-carlimartinez=# \c hairsaloon;
+carlimartinez=# \c hairsalon;
 
-hair_saloon=# CREATE TABLE clients (id serial PRIMARY KEY, clientsname varchar);
+hair_saloon=# CREATE TABLE clients (id serial PRIMARY KEY, clientsname varchar, stylist_id);
 
 hair_saloon=# CREATE TABLE stylists (id serial PRIMARY KEY, stylist varchar);
 
-hair_saloon=# ALTER TABLE clients ADD saloon_id int;
-
-hair_saloon=# CREATE DATABASE hairsaloonstest WITH TEMPLATE hairsaloon;
+hair_saloon=# CREATE DATABASE hairsalonstest WITH TEMPLATE hairsalon;
 
 2. `gem install bundler`
 3.   `bundle`

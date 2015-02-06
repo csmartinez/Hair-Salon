@@ -1,4 +1,4 @@
-<h1><strong>Add a Client of <%= @stylist.stylist() %>'s </strong></h1>
+<h1><strong>Add a Client of <%= @stylist.name() %></strong></h1>
 
 <form action="/clients" method="post">
   <input id="stylist_id" name="stylist_id" type="hidden" value="<%= @stylist.id() %>">
@@ -10,15 +10,15 @@
 </form>
 
 <% if @stylist.clients().any?() %>
-<h3>Here are all of this stylist's clients:</h3>
+<h4><strong><%= @stylist.name() %>'s clients <strong></h4>
 
 <ul>
   <% @stylist.clients().each() do |myclient| %>
-  <li><%= myclient.clientsname() %></li>
+  <li><h4><%= myclient.clientsname() %></h4></li>
   <% end %>
 </ul>
 <% else %>
-<p>There are no clients yet!</p>
+<h4>There are no clients yet!</h4>
 <% end %>
 
 <a href="/"><button type="submit" class="btn btn-primary">Back</button></a>

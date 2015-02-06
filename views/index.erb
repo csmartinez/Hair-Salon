@@ -2,7 +2,7 @@
 
 <form action="/stylists" method="post">
   <label for="name"><h4><strong>Full Name: </strong></h4></label>
-  <input id="stylist" name="stylist" type="text">
+  <input id="name" name="name" type="text">
 
   <button type="submit" class="btn btn-primary">Add stylist</button>
 </form>
@@ -12,11 +12,11 @@
 
 <ul>
   <% @stylists.each do |stylist| %>
-  <li><strong><a href="/stylists/<%= stylist.id() %>"><%= stylist.stylist() %></a></strong></li>
+  <li><h4><strong><a href="/stylists/<%= stylist.id() %>"><%= stylist.name() %></a></strong></h4></li>
   <% end %>
 </ul>
 <% else %>
-<p>There are no stylists yet!</p>
+<h5>There are no stylists yet!</h5>
 <% end %>
 
 <a href="/"><button type="submit" class="btn btn-primary">Back</button></a>

@@ -1,8 +1,8 @@
 class Stylist
-  attr_reader(:stylist, :id)
+  attr_reader(:name, :id)
 
   define_method(:initialize) do |attributes|
-    @stylist = attributes.fetch(:stylist)
+    @name = attributes.fetch(:name)
     @id = attributes.fetch(:id)
   end
 
@@ -10,9 +10,9 @@ class Stylist
     returned_stylists = DB.exec("SELECT * FROM stylists;")
     stylists = []
     returned_stylists.each() do |mystylist|
-      @stylist = mystylist.fetch("stylist")
+      @name = mystylist.fetch("name")
       @id = mystylist.fetch("id").to_i()
-      stylists.push(Stylist.new({:stylist => @stylist, :id => @id}))
+      stylists.push(Stylist.new({:name => @name, :id => @id}))
     end
     stylists
   end
@@ -28,12 +28,12 @@ class Stylist
   end
 
   define_method(:save) do
-    result = DB.exec("INSERT INTO stylists (stylist) VALUES ('#{@stylist}') RETURNING id;")
+    result = DB.exec("INSERT INTO stylists (name) VALUES ('#{@name}') RETURNING id;")
     @id = result.first().fetch("id").to_i()
   end
 
   define_method(:==) do |another_stylist|
-    self.stylist().==(another_stylist.stylist()).&(self.id().==(another_stylist.id()))
+    self.name().==(another_stylist.name()).&(self.id().==(another_stylist.id()))
   end
 
   define_method(:clients) do

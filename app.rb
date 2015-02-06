@@ -22,8 +22,8 @@ post("/clients") do
 end
 
 post("/stylists") do
-  stylist = params.fetch("stylist")
-  stylist = Stylist.new({:stylist => stylist, :id => nil})
+  name = params.fetch("name")
+  stylist = Stylist.new({:name => name, :id => nil})
   stylist.save()
   @stylists= Stylist.all()
   redirect back

@@ -14,7 +14,7 @@ carlimartinez=# \c hairsalon;
 
 hair_saloon=# CREATE TABLE clients (id serial PRIMARY KEY, clientsname varchar, stylist_id);
 
-hair_saloon=# CREATE TABLE stylists (id serial PRIMARY KEY, stylist varchar);
+hair_saloon=# CREATE TABLE stylists (id serial PRIMARY KEY, name varchar);
 
 hair_saloon=# CREATE DATABASE hairsalonstest WITH TEMPLATE hairsalon;
 

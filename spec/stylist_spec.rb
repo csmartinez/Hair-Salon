@@ -9,9 +9,9 @@ describe(Stylist) do
 
   describe(".find") do
     it("returns a stylist by their ID number") do
-      test_stylist = Stylist.new({:stylist => "Joan Rivers", :id => nil})
+      test_stylist = Stylist.new({:name => "Joan Rivers", :id => nil})
       test_stylist.save()
-      test_stylist2 = Stylist.new({:stylist => "Betty White", :id => nil})
+      test_stylist2 = Stylist.new({:name => "Betty White", :id => nil})
       test_stylist2.save()
       expect(Stylist.find(test_stylist2.id())).to(eq(test_stylist2))
     end
@@ -19,14 +19,14 @@ describe(Stylist) do
 
   describe("#stylist") do
     it("tells you the stylist's name") do
-      stylist = Stylist.new({:stylist => "Jade Stylist", :id => nil})
+      stylist = Stylist.new({:name => "Jade Stylist", :id => nil})
       expect(stylist.stylist()).to(eq("Jade Stylist"))
     end
   end
 
   describe("#id") do
     it("sets its ID when you save it") do
-      stylist = Stylist.new({:stylist => "Jade Stylist", :id => nil})
+      stylist = Stylist.new({:name => "Jade Stylist", :id => nil})
       stylist.save()
       expect(stylist.id()).to(be_an_instance_of(Fixnum))
     end
@@ -34,7 +34,7 @@ describe(Stylist) do
 
   describe("#save") do
     it("lets your save the stylists into the database") do
-      stylist = Stylist.new({:stylist => "Jades Stylist", :id => nil})
+      stylist = Stylist.new({:name => "Jades Stylist", :id => nil})
       stylist.save()
       expect(Stylist.all()).to(eq([stylist]))
     end
@@ -42,15 +42,15 @@ describe(Stylist) do
 
   describe("#==") do
     it("is the same stylist if it has the same name") do
-      stylist1 = Stylist.new({:stylist => "Jades Stylist", :id => nil})
-      stylist2 = Stylist.new({:stylist => "Jades Stylist", :id => nil})
+      stylist1 = Stylist.new({:name => "Jades Stylist", :id => nil})
+      stylist2 = Stylist.new({:name => "Jades Stylist", :id => nil})
       expect(stylist1).to(eq(stylist2))
     end
   end
 
   describe("#clientsname") do
     it("returns an array of clients for that stylist") do
-      test_stylist = Stylist.new({:stylist => "Jade Stylist", :id => nil})
+      test_stylist = Stylist.new({:name => "Jade Stylist", :id => nil})
       test_stylist.save()
       test_client = Client.new({:clientsname => "Joan Rivers", :stylist_id => test_stylist.id()})
       test_client.save()

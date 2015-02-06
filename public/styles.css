@@ -1,5 +1,5 @@
 body {
-  background-image: url("http://www.mrksmedia.com/images/mrks_bckg.png");
+  background-image: url("http://www.designbolts.com/wp-content/uploads/2014/03/Blue-Blur-Background1.jpg");
 }
 .container {
   width: 700px;
@@ -9,8 +9,5 @@ a {
 }
 a:hover, a:focus {
   text-decoration: underline;
-  color: blue;
-}
-h1 {
   color: black;
 }
